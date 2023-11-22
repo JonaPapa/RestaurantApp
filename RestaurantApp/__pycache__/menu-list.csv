@@ -1,0 +1,15 @@
+100,Wakame Salad,5.5,meal
+101,Summer Salad,6.9,meal
+200,Miso Soup,4.8,meal
+201,Spring Rolls,4.5,meal
+202,Tempered Shrimps,7.5,meal
+300,Vegeteraian Sushi,5.0,meal
+301,Smoked Salmon Sushi,8.5,meal
+302,Crab Sushi,8.2,meal
+400,Chicken Noodles,6.5,meal
+401,Ramen,6.0,meal
+450,Water,1.0,drink,false
+451,Coca cola,2.0,drink,true
+452,Coca cola Zero,2.0,drink,false
+500,Tiramisu,4.5,meal
+501,Sweet Maki,9.0,meal

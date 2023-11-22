@@ -1,0 +1,50 @@
+Screen:
+    id: restaurantscreen
+    name: 'restaurantScreen'
+    
+    MDCard:
+        size_hint: None, None
+        size: 800, 600
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        orientation: 'vertical'
+        padding: [0,200,0,20]
+
+        MDBoxLayout:
+            id:general_box_layout
+            size_hint_y: None
+            orientation: 'horizontal'
+            padding: [50,0,0,0]
+            
+            MDBoxLayout: 
+                id: text_field_box_layout
+                padding: dp(10)
+                spacing: dp(10)
+                orientation: 'vertical'
+
+                MDTextField:
+                    id: idTextField
+                    hint_text: "Enter Id" 
+                MDTextField:
+                    id:nameTextField
+                    hint_text: "Enter Name"
+                MDTextField:
+                    id: priceTextField
+                    hint_text: "Enter Price"
+
+            MDBoxLayout:
+                id: buttonsBoxLayout
+                padding: dp(10)
+                spacing: dp(10)
+                orientation: 'vertical'
+
+                MDRectangleFlatButton:
+                    text: 'Add Row'
+                    on_release: app.add_row()
+
+                MDRectangleFlatButton:
+                    text: 'Update Row'
+                    on_release: app.update_row()
+
+                MDRectangleFlatButton:
+                    text: 'Delete Row'
+                    on_release: app.delete_row()

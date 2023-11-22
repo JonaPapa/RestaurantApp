@@ -1,0 +1,134 @@
+Screen:
+    id: restaurantScreen
+    name: 'restaurantScreen'
+
+    MDCard:
+        size_hint: 1, 1
+        orientation: 'vertical'
+        spacing: 20
+
+        BoxLayout:
+            id: baseLayout
+            orientation: 'horizontal'
+            size_hint: 1, 0.9
+
+            BoxLayout:
+                id: first_box_layout
+                orientation: 'vertical'
+                size_hint: 0.3, 1
+                spacing: 20
+                padding: 10
+
+                Spinner:
+                    id: spinner
+                    text: "Order Item Size"
+                    values : ("Small", "Medium", "Large", "XXL")
+                    size_hint: None, None
+                    size: 150, 50
+                    background_color: 0, 0.9, 0.9, 1
+
+                MDTextField:
+                    id: quantity_input
+                    hint_text: "Quantity"
+                    input_type: "number"
+                    size_hint: None, None
+                    size: 200, 50
+
+            BoxLayout:
+                id: second_box_layout
+                orientation: "vertical"
+                size_hint: 0.4, 1
+                spacing: 20
+                padding: 10
+
+                GridLayout:
+                    cols: 2
+                    size_hint: 1, None
+
+                    MDTextField:
+                        id: name_textfield
+                        hint_text: "Enter your name"
+                        size_hint: None, None
+                        size: 200, 50
+                    
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        MDLabel: 
+                            id: check_box_Albania_label
+                            text: "Albania"
+                        CheckBox:
+                            id: check_box_al
+                            active: True
+
+                    MDTextField:
+                        id: phone_nr_textfield
+                        hint_text: "Phone number"
+                        size_hint: None, None
+                        size: 200, 50
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        MDLabel: 
+                            id: check_box_Kosova_label
+                            text: "Kosova"
+                        CheckBox:
+                            id: check_box_ks
+                            active: False
+
+            BoxLayout:
+                id: third_box_layout
+                orientation: "vertical"
+                size_hint: 0.3, 1
+                spacing: 20
+                padding: 10
+
+                MDCard:
+                    id: third_box_layout
+                    elevation: 4
+                    orientation: "vertical"
+                    size_hint: 1, 1
+                    spacing: 20
+                    padding: 20
+
+                    MDLabel:
+                        id: invoice_label
+                        text: "Invoice will be printed here"
+
+        BoxLayout:
+            id: buttonBoxLayout
+            orientation: 'horizontal'
+            size_hint: 1, 0.1
+            spacing: 20
+
+            Button:
+                id: add_button
+                text: 'Add'
+                size_hint: None, None
+                size: 150, 50
+                background_color: 0, 0.9, 0.9, 1
+                on_release: app.add_product_to_order(self)
+
+
+            Button:
+                id: delete_button
+                text: 'Delete'
+                size_hint: None, None
+                size: 150, 50
+                background_color: 0, 0.9, 0.9, 1
+
+            Button:
+                id: order_button
+                text: 'Order'
+                size_hint: None, None
+                size: 150, 50
+                background_color: 0, 0.9, 0.9, 1
+                on_release: app.calculate_amount(self)
+
+            Button:
+                id: reset_button
+                text: 'Reset'
+                size_hint: None, None
+                size: 150, 50
+                background_color: 0, 0.9, 0.9, 1
